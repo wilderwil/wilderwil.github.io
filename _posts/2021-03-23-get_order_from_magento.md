@@ -23,9 +23,7 @@ var settings = {
   "timeout": 0,
   
   "headers": {
-  
-    "Authorization": "Bearer TOKEN-XXXXX",
-    
+      Authorization": "Bearer TOKEN-XXXXX",
   },
   
 };
@@ -61,9 +59,7 @@ curl_setopt_array($curl, array(
   CURLOPT_CUSTOMREQUEST => 'GET',
   
   CURLOPT_HTTPHEADER => array(
-  
-    'Authorization: Bearer TOKEN-XXXXX',
-    
+      'Authorization: Bearer TOKEN-XXXXX',
   ),
   
 ));
@@ -103,39 +99,21 @@ print(data.decode("utf-8"))
 Una vez procesada la petición se obtiene una respuesta como se muestra a continuación:
 
 {
-
     "items": [
-    
-        {
-        
-            "store_id": "ABC-000000109",
-            
-            "status": "complete",
-            
-            "extension_attributes": {
-            
-              "delivery_type": "home"
-              
-            }
-            
+            {
+             "store_id": "ABC-000000109",
+             "status": "complete",
+             "extension_attributes": {
+             "delivery_type": "home"
+           }
         },
-        
         {
-        
             "increment_id": "ABC-2000000040",
-            
             "status": "pending",
-            
             "extension_attributes": {
-            
-                "delivery_type": "work"
-                
-            }
-            
+            "delivery_type": "work"
+             }
         }
-        
-    ],
-    
+       ],
     "total_count": 2
-    
 }
