@@ -12,77 +12,130 @@ title: How get Orders with customs attributes from magento Api
 Teniendo en cuenta que para el ejemplo vamos a obtener de la coleccion de ordenes solo los campos  "sore_id", "status", "delivery_type" por cada item ademas de la cantidad total de ordenes ("total_count"), se muestra el codigo necesario para hacer la llamada:
 
 JavaScript - Jquery
+
 _______________________________________________________________________________________________
+
 var settings = {
   "url": "HOST/rest/V1/orders?searchCriteria[pageSize]=100&searchCriteria[currentPage]=1&fields=items[store_id,status,extension_attributes[delivery_type]],total_count",
+  
   "method": "GET",
+  
   "timeout": 0,
+  
   "headers": {
+  
     "Authorization": "Bearer TOKEN-XXXXX",
+    
   },
+  
 };
 
 $.ajax(settings).done(function (response) {
+
   console.log(response);
+  
 });
 
 PHP - CURL
+
 _________________________________________________________________________________________________
+
 
 $curl = curl_init();
 
 curl_setopt_array($curl, array(
   CURLOPT_URL => 'HOST/rest/V1/orders?searchCriteria[pageSize]=100&searchCriteria[currentPage]=1&fields=items[store_id,status,extension_attributes[delivery_type]],total_count',
+  
   CURLOPT_RETURNTRANSFER => true,
+  
   CURLOPT_ENCODING => '',
+  
   CURLOPT_MAXREDIRS => 10,
+  
   CURLOPT_TIMEOUT => 0,
+  
   CURLOPT_FOLLOWLOCATION => true,
+  
   CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  
   CURLOPT_CUSTOMREQUEST => 'GET',
+  
   CURLOPT_HTTPHEADER => array(
+  
     'Authorization: Bearer TOKEN-XXXXX',
+    
   ),
+  
 ));
 
 $response = curl_exec($curl);
 
 curl_close($curl);
+
 echo $response;
 
+
 Pyhton - http.client
+
 _________________________________________________________________________________________________
+
 import http.client
 
 conn = http.client.HTTPSConnection("HOST")
+
 payload = ''
+
 headers = {
+
   'Authorization': 'Bearer TOKEN-XXXXX',
+  
 }
+
 conn.request("GET", "/rest/V1/orders?searchCriteria[pageSize]=100&searchCriteria[BcurrentPage]=1&fields=items[store_id,status,extension_attributes[delivery_type]],total_count", payload, headers)
+
 res = conn.getresponse()
+
 data = res.read()
+
 print(data.decode("utf-8"))
 
 
 Una vez procesada la petición se obtiene una respuesta como se muestra a continuación:
 
 {
+
     "items": [
+    
         {
+        
             "store_id": "ABC-000000109",
+            
             "status": "complete",
+            
             "extension_attributes": {
-                "delivery_type": "home"
+            
+              "delivery_type": "home"
+              
             }
+            
         },
+        
         {
+        
             "increment_id": "ABC-2000000040",
+            
             "status": "pending",
+            
             "extension_attributes": {
+            
                 "delivery_type": "work"
+                
             }
+            
         }
+        
     ],
+    
     "total_count": 2
+    
 }
