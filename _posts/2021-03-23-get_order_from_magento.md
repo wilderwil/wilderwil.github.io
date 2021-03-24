@@ -9,7 +9,8 @@ title: How get Orders with customs attributes from magento Api
 
 3.- Ya se verifico que el extension_attribute esta expuesto en la API (para el ejemplo 'delivery_type')  y se obtuvo el TOKEN  (para el ejempl se asume que devolvió TOKEN-XXXXX), solo queda hacer la llamada API según el lenguaje que estamos usando, para ello se  indica la manera de hacerlo para PHP JavaScript y Python
 
-Teniendo en cuenta que para el ejemplo vamos a obtener de la coleccion de ordenes solo los campos  "sore_id", "status", "delivery_type" por cada item ademas de la cantidad total de ordenes ("total_count"), se muestra el codigo necesario para hacer la llamada:
+Teniendo en cuenta que para el ejemplo vamos a obtener de la coleccion de ordenes solo los campos  "store_id", "status", "delivery_type" por cada item ademas de la cantidad total de ordenes ("total_count"), se muestra el codigo necesario para hacer la llamada:
+
 
 JavaScript - Jquery
 
@@ -33,6 +34,7 @@ $.ajax(settings).done(function (response) {
   console.log(response);
   
 });
+
 
 PHP - CURL
 
@@ -71,6 +73,7 @@ curl_close($curl);
 echo $response;
 
 
+
 Pyhton - http.client
 
 _________________________________________________________________________________________________
@@ -94,6 +97,7 @@ res = conn.getresponse()
 data = res.read()
 
 print(data.decode("utf-8"))
+
 
 
 Una vez procesada la petición se obtiene una respuesta como se muestra a continuación:
