@@ -17,7 +17,7 @@ JavaScript - Jquery
 _______________________________________________________________________________________________
 ```JavaScript
 var settings = {
-     "url": "HOST/rest/V1/orders?searchCriteria[pageSize]=100&searchCriteria[currentPage]=1&     fields=items[store_id,status,extension_attributes[delivery_type]],total_count",
+     "url": "HOST/rest/V1/orders?searchCriteria[pageSize]=100&searchCriteria[currentPage]=1&fields=items[store_id,status,extension_attributes[delivery_type]],total_count",
      "method": "GET",
      "timeout": 0,
      "headers": {
