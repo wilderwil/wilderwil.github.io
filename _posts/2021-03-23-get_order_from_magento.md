@@ -15,7 +15,7 @@ Teniendo en cuenta que para el ejemplo vamos a obtener de la coleccion de ordene
 JavaScript - Jquery
 
 _______________________________________________________________________________________________
-``` JavaScript
+```JavaScript
 var settings = {
      "url": "HOST/rest/V1/orders?searchCriteria[pageSize]=100&searchCriteria[currentPage]=1&     fields=items[store_id,status,extension_attributes[delivery_type]],total_count",
      "method": "GET",
@@ -33,7 +33,7 @@ PHP - CURL
 
 _________________________________________________________________________________________________
 
-``` PHP
+```PHP
 $curl = curl_init();
 curl_setopt_array($curl, 
                  array(CURLOPT_URL => 'HOST/rest/V1/orders?searchCriteria[pageSize]=100&searchCriteria[currentPage]=1&fields=items[store_id,status,extension_attributes[delivery_type]],total_count',  
@@ -56,7 +56,7 @@ Pyhton - http.client
 
 _________________________________________________________________________________________________
 
-``` Python
+```Python
 import http.client
 conn = http.client.HTTPSConnection("HOST")
 payload = ''
@@ -72,7 +72,7 @@ print(data.decode("utf-8"))
 
 Una vez procesada la petición se obtiene una respuesta como se muestra a continuación:
 
-``` Json
+```Json
 {
     "items": [
             {
