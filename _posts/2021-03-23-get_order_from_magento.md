@@ -15,7 +15,7 @@ Teniendo en cuenta que para el ejemplo vamos a obtener de la coleccion de ordene
 JavaScript - Jquery
 
 _______________________________________________________________________________________________
-` JavaScript
+`` JavaScript
 var settings = {
      "url": "HOST/rest/V1/orders?searchCriteria[pageSize]=100&searchCriteria[currentPage]=1&     fields=items[store_id,status,extension_attributes[delivery_type]],total_count",
      "method": "GET",
@@ -27,7 +27,7 @@ var settings = {
 $.ajax(settings).done(function (response) {
   console.log(response);
 });
-`
+``
 
 PHP - CURL
 
