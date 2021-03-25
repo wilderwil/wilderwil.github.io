@@ -72,7 +72,7 @@ print(data.decode("utf-8"))
 
 Una vez procesada la petición se obtiene una respuesta como se muestra a continuación:
 
-```
+``` Json
 {
     "items": [
             {
