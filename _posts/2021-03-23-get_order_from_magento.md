@@ -11,6 +11,11 @@ title: How get Orders with customs attributes from magento Api
 
 Teniendo en cuenta que para el ejemplo vamos a obtener de la coleccion de ordenes solo los campos  "store_id", "status", "delivery_type" por cada item ademas de la cantidad total de ordenes ("total_count"), se muestra el codigo necesario para hacer la llamada:
 
+```
+$prueba="test";
+```
+
+
 
 JavaScript - Jquery
 
