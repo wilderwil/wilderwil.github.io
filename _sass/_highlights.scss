@@ -9,6 +9,13 @@
   margin: 20px 0 20px 0;
   overflow: scroll;
 }
+.highlight {
+  margin: 0;
+  padding: 1em;
+  font-family: $monospace;
+  font-size: $type-size-7;
+  line-height: 1.8;
+}
 
 code {
   font-family:'Bitstream Vera Sans Mono','Courier', monospace;
